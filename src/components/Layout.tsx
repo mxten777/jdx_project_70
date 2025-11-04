@@ -23,10 +23,10 @@ const Layout: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 w-full">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="bg-white/80 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50 w-full">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 w-full">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -85,7 +85,7 @@ const Layout: React.FC = () => {
       <ScrollToTop />
 
       {/* Main Content */}
-      <main className="flex-1">
+  <main className="flex-1 w-full px-2 sm:px-4 md:px-8">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/zlang" element={<ZLangPage />} />
@@ -95,7 +95,7 @@ const Layout: React.FC = () => {
       </main>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-white/20 px-4 py-2 z-50">
+  <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-white/20 px-2 py-2 z-50">
         <div className="flex items-center justify-around">
           {navItems.map((item) => {
             const Icon = item.icon;

@@ -178,20 +178,20 @@ const ZLangPage: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2 korean-text">
                     번역할 세대
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-1 min-w-0 w-full max-w-full box-border overflow-hidden">
                     {generations.map((gen) => (
                       <button
                         key={gen.id}
                         onClick={() => setSourceGeneration(gen.id)}
                         className={clsx(
-                          'p-3 rounded-lg text-sm font-medium transition-all duration-200',
+                          'py-3 px-2 sm:py-4 sm:px-4 rounded-lg text-base font-semibold transition-all duration-200 w-full max-w-full min-w-0 box-border text-center break-keep leading-relaxed whitespace-pre-line overflow-hidden',
                           sourceGeneration === gen.id
-                            ? `bg-gradient-to-r ${gen.color} text-white shadow-lg scale-105`
+                            ? `bg-gradient-to-r ${gen.color} text-white shadow-lg md:scale-105 ring-2 ring-purple-300` // scale-105은 md 이상에서만 적용
                             : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                         )}
                       >
-                        <div className="korean-text">{gen.label}</div>
-                        <div className="text-xs opacity-80">{gen.desc}</div>
+                        <div className="korean-text break-keep whitespace-pre-line w-full text-center text-base leading-snug truncate overflow-hidden">{gen.label}</div>
+                        <div className="text-xs opacity-80 break-keep whitespace-pre-line w-full text-center leading-tight truncate overflow-hidden">{gen.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -208,20 +208,20 @@ const ZLangPage: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2 korean-text">
                     변환할 세대
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-1 min-w-0 w-full max-w-full box-border overflow-hidden">
                     {generations.map((gen) => (
                       <button
                         key={gen.id}
                         onClick={() => setTargetGeneration(gen.id)}
                         className={clsx(
-                          'p-3 rounded-lg text-sm font-medium transition-all duration-200',
+                          'py-3 px-2 sm:py-4 sm:px-4 rounded-lg text-base font-semibold transition-all duration-200 w-full max-w-full min-w-0 box-border text-center break-keep leading-relaxed whitespace-pre-line overflow-hidden',
                           targetGeneration === gen.id
-                            ? `bg-gradient-to-r ${gen.color} text-white shadow-lg scale-105`
+                            ? `bg-gradient-to-r ${gen.color} text-white shadow-lg md:scale-105 ring-2 ring-orange-300` // scale-105은 md 이상에서만 적용
                             : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                         )}
                       >
-                        <div className="korean-text">{gen.label}</div>
-                        <div className="text-xs opacity-80">{gen.desc}</div>
+                        <div className="korean-text break-keep whitespace-pre-line w-full text-center text-base leading-snug truncate overflow-hidden">{gen.label}</div>
+                        <div className="text-xs opacity-80 break-keep whitespace-pre-line w-full text-center leading-tight truncate overflow-hidden">{gen.desc}</div>
                       </button>
                     ))}
                   </div>

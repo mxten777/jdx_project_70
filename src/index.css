@@ -26,6 +26,22 @@ body {
   color: #1a202c;
 }
 
+/* Prevent horizontal overflow globally (mobile) */
+html, body, #root {
+  overflow-x: hidden;
+}
+
+/* Ensure common media and controls don't break layout */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, select, textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .korean-text {
   font-family: 'Noto Sans KR', system-ui, sans-serif;
 }

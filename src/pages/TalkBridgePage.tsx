@@ -220,20 +220,20 @@ const TalkBridgePage: React.FC = () => {
                 </button>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-3 w-full max-w-full box-border overflow-hidden">
                 {participants.map((participant) => (
-                  <div key={participant.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  <div key={participant.id} className="flex items-center gap-1 p-2 bg-gray-50 rounded-lg w-full max-w-full min-w-0 box-border overflow-hidden">
                     <div className={`w-4 h-4 rounded-full bg-${participant.color}-500`}></div>
                     <input
                       type="text"
                       value={participant.name}
                       onChange={(e) => updateParticipant(participant.id, { name: e.target.value })}
-                      className="flex-1 bg-transparent border-none outline-none font-medium korean-text"
+                      className="flex-1 min-w-0 max-w-full bg-transparent border-none outline-none font-medium korean-text truncate overflow-hidden box-border"
                     />
                     <select
                       value={participant.generation}
                       onChange={(e) => updateParticipant(participant.id, { generation: e.target.value as Generation })}
-                      className="bg-white border border-gray-200 rounded px-2 py-1 text-sm korean-text"
+                      className="bg-white border border-gray-200 rounded px-2 py-1 text-sm korean-text max-w-full min-w-0 truncate overflow-hidden box-border"
                     >
                       {generations.map((gen) => (
                         <option key={gen.id} value={gen.id}>{gen.label}</option>
