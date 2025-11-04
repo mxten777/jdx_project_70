@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRightLeft, Copy, Volume2, Sparkles, RefreshCw, MessageSquare, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRightLeft, Copy, Volume2, Sparkles, MessageSquare, Zap, TrendingUp } from 'lucide-react';
 import clsx from 'clsx';
 import { LoadingSpinner, TypingIndicator } from '../components/LoadingComponents';
 import { ProgressRing, StatCard } from '../components/DataVisualization';
@@ -67,17 +67,20 @@ const ZLangPage: React.FC = () => {
     
     const translations: Record<string, Record<Generation, string>> = {
       'ㄹㅇ': {
+        'gen-z': 'ㄹㅇ',
         'millennial': '진짜',
         'gen-x': '정말로',
         'boomer': '정말입니다'
       },
       '갑분싸': {
+        'gen-z': '갑분싸',
         'millennial': '갑자기 분위기 싸해짐',
         'gen-x': '갑자기 어색해졌네요',
         'boomer': '갑자기 분위기가 어색해졌습니다'
       },
       '헐': {
-        'gen-z': '웃김ㅋㅋ',
+        'gen-z': '헐ㅋㅋ',
+        'millennial': '헐',
         'gen-x': '어머나',
         'boomer': '아이고'
       }

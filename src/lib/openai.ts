@@ -1,4 +1,4 @@
-import { OpenAIRequest, OpenAIResponse, Generation, SlangTranslation, EmotionAnalysis } from '../types';
+import type { Generation, SlangTranslation, EmotionAnalysis } from '../types';
 
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 const API_BASE_URL = 'https://api.openai.com/v1';

@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { LoadingSpinner } from './LoadingComponents';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
+  children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   loading?: boolean;
@@ -13,6 +14,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   gradient?: boolean;
   pulse?: boolean;
   glow?: boolean;
+  className?: string;
+  disabled?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -28,7 +33,8 @@ export const Button: React.FC<ButtonProps> = ({
   glow = false,
   className,
   disabled,
-  ...props
+  onClick,
+  type = 'button'
 }) => {
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 korean-text';
   
@@ -82,7 +88,8 @@ export const Button: React.FC<ButtonProps> = ({
         ]
       } : {}}
       transition={pulse ? { duration: 2, repeat: Infinity } : { duration: 0.2 }}
-      {...props}
+      onClick={onClick}
+      type={type}
     >
       {loading && <LoadingSpinner size="sm" color="white" className="mr-2" />}
       {leftIcon && !loading && <span className="mr-2">{leftIcon}</span>}
@@ -147,11 +154,15 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
   );
 };
 
-interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IconButtonProps {
   icon: React.ReactNode;
   size?: 'sm' | 'md' | 'lg';
   variant?: 'ghost' | 'outline' | 'filled';
   tooltip?: string;
+  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
@@ -160,7 +171,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
   variant = 'ghost',
   tooltip,
   className,
-  ...props
+  onClick,
+  disabled,
+  type = 'button'
 }) => {
   const sizes = {
     sm: 'w-8 h-8 text-sm',
@@ -185,7 +198,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       title={tooltip}
-      {...props}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
     >
       {icon}
     </motion.button>

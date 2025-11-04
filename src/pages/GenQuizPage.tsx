@@ -148,7 +148,7 @@ const GenQuizPage: React.FC = () => {
   const currentQuestion = currentQuestions[currentQuestionIndex];
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: number;
     if (quizState === 'playing' && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft(prev => prev - 1);

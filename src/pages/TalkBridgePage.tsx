@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, BarChart3, Users, Heart, Brain, FileText, Download, Share, Mic, MicOff } from 'lucide-react';
+import { MessageCircle, BarChart3, Users, Heart, Brain, Download, Share, Mic, MicOff } from 'lucide-react';
 import clsx from 'clsx';
 
 type Generation = 'gen-z' | 'millennial' | 'gen-x' | 'boomer';
@@ -64,7 +64,7 @@ const TalkBridgePage: React.FC = () => {
 
   const colorOptions = ['pink', 'blue', 'green', 'purple', 'orange', 'teal'];
 
-  const mockAnalyze = async (text: string): Promise<AnalysisResult> => {
+  const mockAnalyze = async (_text: string): Promise<AnalysisResult> => {
     await new Promise(resolve => setTimeout(resolve, 3000));
     
     return {
