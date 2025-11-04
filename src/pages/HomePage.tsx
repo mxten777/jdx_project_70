@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-40 right-10 w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-70"
+          className="absolute top-40 right-10 w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-70 hidden md:block"
           animate={{ 
             y: [0, -15, 0],
             x: [0, 10, 0],
@@ -121,7 +121,7 @@ const HomePage: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-1/3 right-1/4 w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-600 rounded-full opacity-60"
+          className="absolute top-1/3 right-1/4 w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-600 rounded-full opacity-60 hidden md:block"
           animate={{ 
             scale: [1, 1.3, 1],
             opacity: [0.6, 0.9, 0.6]

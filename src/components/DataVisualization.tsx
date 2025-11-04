@@ -102,7 +102,7 @@ export const StatCard: React.FC<StatCardProps> = ({
       whileHover={{ y: -2, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}
       transition={{ duration: 0.2 }}
     >
-      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colorStyles[color]}`} />
+      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colorStyles[color]} max-w-full`} />
       
       <div className="flex items-center justify-between">
         <div className="flex-1">
@@ -321,7 +321,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
       }}
       transition={{ duration: 0.2 }}
     >
-      <div className={`absolute top-0 left-0 right-0 h-1 ${color}`} />
+      <div className={`absolute top-0 left-0 right-0 h-1 ${color} max-w-full`} />
       
       <div className="flex items-start justify-between">
         <div className="flex-1">

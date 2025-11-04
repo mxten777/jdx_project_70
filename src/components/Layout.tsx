@@ -23,7 +23,7 @@ const Layout: React.FC = () => {
   ];
 
   return (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 w-full">
+  <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 w-full max-w-full box-border" style={{maxWidth: '100vw', overflowX: 'hidden'}}>
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 w-full">

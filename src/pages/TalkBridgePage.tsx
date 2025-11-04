@@ -182,8 +182,8 @@ const TalkBridgePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen px-4 py-8 sm:px-6 lg:px-8 pb-24 md:pb-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen px-4 py-8 sm:px-6 lg:px-8 pb-24 md:pb-8 overflow-x-hidden">
+  <div className="max-w-7xl mx-auto w-full box-border overflow-hidden">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ const TalkBridgePage: React.FC = () => {
           <p className="text-gray-500 korean-text">대화를 분석하고 소통 개선점을 제안드립니다</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+  <div className="grid lg:grid-cols-3 gap-8 w-full max-w-full box-border overflow-hidden">
           {/* Input Section */}
           <div className="lg:col-span-2 space-y-6">
             {/* Participants Setup */}
@@ -287,17 +287,17 @@ const TalkBridgePage: React.FC = () => {
                 <div className="text-sm text-gray-400">
                   {conversationText.length}/2000
                 </div>
-                <div className="flex space-x-3">
+                <div className="flex space-x-2 sm:space-x-3 w-full max-w-full min-w-0 overflow-hidden">
                   <button
                     onClick={() => setConversationText('')}
-                    className="px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors korean-text"
+                    className="px-3 sm:px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors korean-text flex-shrink-0"
                   >
                     초기화
                   </button>
                   <button
                     onClick={handleAnalyze}
                     disabled={!conversationText.trim() || isAnalyzing}
-                    className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-semibold flex items-center space-x-2 transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 sm:px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-semibold flex items-center space-x-1 sm:space-x-2 transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex-1 min-w-0 max-w-full overflow-hidden"
                   >
                     {isAnalyzing ? (
                       <>
@@ -389,7 +389,7 @@ const TalkBridgePage: React.FC = () => {
               </div>
 
               {/* Tab Navigation */}
-              <div className="flex space-x-1 mb-6 bg-gray-100 rounded-lg p-1">
+              <div className="flex space-x-1 mb-6 bg-gray-100 rounded-lg p-1 w-full max-w-full overflow-hidden">
                 {[
                   { id: 'emotion', label: '감정 분석', icon: Heart },
                   { id: 'insights', label: '세대 인사이트', icon: Users },
@@ -401,7 +401,7 @@ const TalkBridgePage: React.FC = () => {
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id as any)}
                       className={clsx(
-                        'flex-1 flex items-center justify-center space-x-2 py-2 px-4 rounded-md transition-all duration-200 korean-text',
+                        'flex-1 flex items-center justify-center space-x-1 sm:space-x-2 py-2 px-2 sm:px-4 rounded-md transition-all duration-200 korean-text min-w-0 max-w-full overflow-hidden',
                         activeTab === tab.id
                           ? 'bg-white text-gray-900 shadow-sm'
                           : 'text-gray-600 hover:text-gray-900'
@@ -427,24 +427,24 @@ const TalkBridgePage: React.FC = () => {
                     {/* Overall Emotion */}
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 korean-text">전체 감정 분석</h3>
-                      <div className="grid grid-cols-3 gap-4 mb-4">
-                        <div className="text-center p-4 bg-green-50 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600">
+                      <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 w-full max-w-full overflow-hidden">
+                        <div className="text-center p-2 sm:p-4 bg-green-50 rounded-lg min-w-0 max-w-full overflow-hidden">
+                          <div className="text-xl sm:text-2xl font-bold text-green-600">
                             {Math.round(analysisResult.emotionAnalysis.overall.positive * 100)}%
                           </div>
-                          <div className="text-sm text-gray-600 korean-text">긍정</div>
+                          <div className="text-xs sm:text-sm text-gray-600 korean-text truncate">긍정</div>
                         </div>
-                        <div className="text-center p-4 bg-gray-50 rounded-lg">
-                          <div className="text-2xl font-bold text-gray-600">
+                        <div className="text-center p-2 sm:p-4 bg-gray-50 rounded-lg min-w-0 max-w-full overflow-hidden">
+                          <div className="text-xl sm:text-2xl font-bold text-gray-600">
                             {Math.round(analysisResult.emotionAnalysis.overall.neutral * 100)}%
                           </div>
-                          <div className="text-sm text-gray-600 korean-text">중립</div>
+                          <div className="text-xs sm:text-sm text-gray-600 korean-text truncate">중립</div>
                         </div>
-                        <div className="text-center p-4 bg-red-50 rounded-lg">
-                          <div className="text-2xl font-bold text-red-600">
+                        <div className="text-center p-2 sm:p-4 bg-red-50 rounded-lg min-w-0 max-w-full overflow-hidden">
+                          <div className="text-xl sm:text-2xl font-bold text-red-600">
                             {Math.round(analysisResult.emotionAnalysis.overall.negative * 100)}%
                           </div>
-                          <div className="text-sm text-gray-600 korean-text">부정</div>
+                          <div className="text-xs sm:text-sm text-gray-600 korean-text truncate">부정</div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">

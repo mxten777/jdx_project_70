@@ -241,7 +241,7 @@ const ZLangPage: React.FC = () => {
                     placeholder="예: ㄹㅇ 갑분싸네..."
                     className="w-full h-32 p-4 border border-gray-200 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent korean-text"
                   />
-                  <div className="absolute bottom-3 right-3 text-sm text-gray-400">
+                  <div className="absolute bottom-3 right-3 text-sm text-gray-400 hidden sm:block">
                     {inputText.length}/500
                   </div>
                 </div>
